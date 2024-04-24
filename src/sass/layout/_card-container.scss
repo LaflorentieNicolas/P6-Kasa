@@ -1,0 +1,14 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  overflow: auto;
+  padding: 40px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    background-color: white;
+    padding: 0px;
+  }
+}
