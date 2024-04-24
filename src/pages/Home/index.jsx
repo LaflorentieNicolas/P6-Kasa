@@ -5,6 +5,23 @@ import "../../sass/main.scss";
 import imgHomeBanner from "../../assets/img/banner-home.webp";
 
 const Home = () => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch("/logements.json");
+        const data = await response.json();
+
+        setData(data);
+      } catch (err) {
+        setError(err);
+      }
+    }
+    getData();
+  }, []);
+
   return (
     <main>
       <div className="banner">
@@ -12,8 +29,17 @@ const Home = () => {
         <Banner img={imgHomeBanner} />
       </div>
 
+      {error && <span>{error}</span>}
+
       <div className="card-container">
-        <Card /> <Card /> <Card /> <Card /> <Card /> <Card />
+        {data.map((logement) => (
+          <Card
+            key={logement.id}
+            id={logement.id}
+            title={logement.title}
+            cover={logement.cover}
+          />
+        ))}
       </div>
     </main>
   );

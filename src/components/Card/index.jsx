@@ -1,10 +1,10 @@
 import "../../sass/main.scss";
 
-function Card({ cover, name }) {
+function Card({ cover, title }) {
   return (
     <div className="card">
-      <img className="card__image" src={cover} alt={name} />
-      <p className="card__title">{name}</p>
+      <p className="card__title">{title}</p>
+      <img className="card__image" src={cover} alt={title} />
     </div>
   );
 }
