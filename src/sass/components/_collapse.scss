@@ -1,7 +1,11 @@
 .about-container {
   display: grid;
-  justify-content: center;
   gap: 30px;
+  padding: 0 100px 0 100px;
+  @media (max-width: 768px) {
+    gap: 20px;
+    padding: 0;
+  }
 }
 
 .collapse {
@@ -9,14 +13,20 @@
   align-items: center;
   justify-content: space-between;
   background-color: #ff6060;
-  width: 1023px;
+  flex-grow: 1;
   height: 54px;
-  padding: 0px 20px 0px 15px;
+  padding: 0 20px 0 15px;
   border-radius: 5px;
+  @media (max-width: 768px) {
+    height: 30px;
+  }
   &__title {
     color: white;
     font-weight: 700;
-    size: 24px;
+    font-size: 24px;
+    @media (max-width: 768px) {
+      font-size: 13px;
+    }
   }
 }
 
