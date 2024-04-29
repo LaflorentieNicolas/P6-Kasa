@@ -1,3 +1,9 @@
+.about-container {
+  display: grid;
+  justify-content: center;
+  gap: 30px;
+}
+
 .collapse {
   display: flex;
   align-items: center;
@@ -5,12 +11,16 @@
   background-color: #ff6060;
   width: 1023px;
   height: 54px;
-  padding: 10px 20px 10px 15px;
-  gap: 0px;
+  padding: 0px 20px 0px 15px;
   border-radius: 5px;
   &__title {
     color: white;
     font-weight: 700;
     size: 24px;
   }
+}
+
+button {
+  border: none;
+  background: none;
 }

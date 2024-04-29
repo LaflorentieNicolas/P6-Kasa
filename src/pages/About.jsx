@@ -1,16 +1,45 @@
-import imgAboutBanner from "../assets/img/banner-about.webp";
+import { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import Collapse from "../components/Collapse";
+import "../sass/main.scss";
+import imgAboutBanner from "../assets/img/banner-about.webp";
 
-function About() {
+const About = () => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch("/about.json");
+        const data = await response.json();
+
+        setData(data);
+      } catch (err) {
+        setError(err);
+      }
+    }
+    getData();
+  }, []);
+
   return (
     <main>
       <div className="banner">
         <Banner img={imgAboutBanner} />
       </div>
-      <Collapse />
+      {error && <span>{error}</span>}
+      <div className="about-container">
+        {data.map((about) => (
+          <Collapse
+            key={about.id}
+            id={about.id}
+            title={about.title}
+            description={about.description}
+          />
+        ))}
+      </div>
     </main>
   );
-}
+};
 
 export default About;
