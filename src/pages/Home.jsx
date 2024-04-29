@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Banner from "../../components/Banner";
-import Card from "../../components/Card/index";
-import "../../sass/main.scss";
-import imgHomeBanner from "../../assets/img/banner-home.webp";
+import Banner from "../components/Banner";
+import Card from "../components/Card";
+import "../sass/main.scss";
+import imgHomeBanner from "../assets/img/banner-home.webp";
 
 const Home = () => {
   const [data, setData] = useState([]);

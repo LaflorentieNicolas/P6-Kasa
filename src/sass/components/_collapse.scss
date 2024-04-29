@@ -1,0 +1,16 @@
+.collapse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ff6060;
+  width: 1023px;
+  height: 54px;
+  padding: 10px 20px 10px 15px;
+  gap: 0px;
+  border-radius: 5px;
+  &__title {
+    color: white;
+    font-weight: 700;
+    size: 24px;
+  }
+}

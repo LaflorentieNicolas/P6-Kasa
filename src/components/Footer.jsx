@@ -1,5 +1,5 @@
-import "../../sass/main.scss";
-import logo from "../../assets/img/footer-logo.webp";
+import "../sass/main.scss";
+import logo from "../assets/img/footer-logo.webp";
 
 function Footer() {
   return (

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/img/header-logo-desktop.webp";
-import "../../sass/main.scss";
+import logo from "../assets/img/header-logo-desktop.webp";
+import "../sass/main.scss";
 
 function Header() {
   return (

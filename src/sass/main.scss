@@ -1,8 +1,9 @@
 @import "./layout/header";
 @import "./layout/footer";
-@import "./layout/grid";
 @import "./layout/banner";
-@import "./layout/card-container";
-@import "./layout/card";
 @import "./base/normalize";
+@import "./base/grid";
 @import "./utils/mixins";
+@import "./components/card-container";
+@import "./components/card";
+@import "./components/collapse";
