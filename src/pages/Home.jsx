@@ -5,8 +5,8 @@ import "../sass/main.scss";
 import imgHomeBanner from "../assets/img/banner-home.webp";
 
 const Home = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(false);
+  const [logementData, setData] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getData() {
@@ -32,7 +32,7 @@ const Home = () => {
       {error && <span>{error}</span>}
 
       <div className="card-container">
-        {data.map((logement) => (
+        {logementData.map((logement) => (
           <Card
             key={logement.id}
             id={logement.id}

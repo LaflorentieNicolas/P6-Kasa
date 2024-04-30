@@ -30,6 +30,23 @@
       font-size: 13px;
     }
   }
+  &__arrow {
+    transition: transform 0.3s ease;
+  }
+  &__text {
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+}
+.rotate {
+  transform: rotate(180deg);
+}
+
+.show .collapse__text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 button {
@@ -38,7 +55,13 @@ button {
 }
 
 .collapse__description {
-  border-radius: 5px;
-  padding: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, background-color 0.5s ease;
   background-color: $light-gray;
+}
+
+.show {
+  max-height: 100%;
+  transition: max-height 0.5s ease, background-color 0.5s ease;
 }

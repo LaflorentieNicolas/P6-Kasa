@@ -9,14 +9,18 @@ function Collapse({ title, description }) {
   };
   return (
     <div className="collapse_container">
-      <div className="collapse">
+      <div className="collapse" onClick={display}>
         <h2 className="collapse__title">{title}</h2>
-        <button onClick={display}>
-          <img src={arrow} alt="Ouvrir le texte" />
+        <button>
+          <img
+            className={`collapse__arrow ${isOpen ? "rotate" : ""}`}
+            src={arrow}
+            alt="Ouvrir le texte"
+          />
         </button>
       </div>
-      <div className="collapse__description">
-        {isOpen && <p>{description}</p>}
+      <div className={`collapse__description ${isOpen ? "show" : ""}`}>
+        <p className="collapse__text">{description}</p>
       </div>
     </div>
   );

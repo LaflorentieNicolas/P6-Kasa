@@ -6,8 +6,8 @@ import "../sass/main.scss";
 import imgAboutBanner from "../assets/img/banner-about.webp";
 
 const About = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(false);
+  const [aboutData, setData] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getData() {
@@ -30,7 +30,7 @@ const About = () => {
       </div>
       {error && <span>{error}</span>}
       <div className="about-container">
-        {data.map((about) => (
+        {aboutData.map((about) => (
           <Collapse
             key={about.id}
             id={about.id}
