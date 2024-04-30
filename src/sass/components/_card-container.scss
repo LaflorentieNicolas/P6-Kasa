@@ -1,8 +1,10 @@
+@import "../utils/variables";
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  background-color: #f6f6f6;
+  background-color: $light-gray;
   border-radius: 25px;
   padding: 40px;
   @media (max-width: 768px) {

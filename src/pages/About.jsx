@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import Collapse from "../components/Collapse";
+
 import "../sass/main.scss";
 import imgAboutBanner from "../assets/img/banner-about.webp";
 

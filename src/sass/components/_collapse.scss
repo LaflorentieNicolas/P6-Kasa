@@ -1,3 +1,5 @@
+@import "../utils/variables";
+
 .about-container {
   display: grid;
   gap: 30px;
@@ -12,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ff6060;
+  background-color: $light-red;
   flex-grow: 1;
   height: 54px;
   padding: 0 20px 0 15px;
@@ -33,4 +35,10 @@
 button {
   border: none;
   background: none;
+}
+
+.collapse__description {
+  border-radius: 5px;
+  padding: 5px;
+  background-color: $light-gray;
 }
