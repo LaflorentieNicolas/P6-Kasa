@@ -1,0 +1,52 @@
+@import "../utils/variables";
+
+.error {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 768px) {
+    padding: 0 57px 0 57px;
+  }
+
+  &__number {
+    display: grid;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 129px;
+    font-size: 288px;
+    font-weight: 700;
+    color: $light-red;
+    @media (max-width: 768px) {
+      padding-bottom: 113px;
+      font-size: 96px;
+    }
+  }
+
+  &__text {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    font-size: 36px;
+    color: $light-red;
+    padding-bottom: 129px;
+    font-weight: 500;
+    @media (max-width: 768px) {
+      padding-bottom: 113px;
+      font-size: 18px;
+    }
+  }
+
+  &__backhome {
+    display: grid;
+    justify-content: center;
+    padding-bottom: 129px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+    @media (max-width: 768px) {
+      padding-bottom: 113px;
+      font-size: 14px;
+    }
+  }
+}
