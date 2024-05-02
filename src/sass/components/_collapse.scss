@@ -9,6 +9,7 @@
   height: 54px;
   padding: 0 20px 0 15px;
   border-radius: 5px;
+  cursor: pointer;
   @media (max-width: 768px) {
     height: 30px;
   }
@@ -42,6 +43,7 @@
 button {
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .collapse__description {
