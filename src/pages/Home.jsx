@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
 import "../sass/main.scss";
@@ -33,12 +34,14 @@ const Home = () => {
 
       <div className="card-container">
         {logementData.map((logement) => (
-          <Card
-            key={logement.id}
-            id={logement.id}
-            title={logement.title}
-            cover={logement.cover}
-          />
+          <Link to={`/HousingDetails/${logement.id}`} key={logement.id}>
+            <Card
+              key={logement.id}
+              id={logement.id}
+              title={logement.title}
+              cover={logement.cover}
+            />
+          </Link>
         ))}
       </div>
     </main>

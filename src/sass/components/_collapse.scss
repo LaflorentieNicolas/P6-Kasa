@@ -10,6 +10,7 @@
   padding: 0 20px 0 15px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.5s ease;
   @media (max-width: 768px) {
     height: 30px;
   }
@@ -25,12 +26,14 @@
     transition: transform 0.3s ease;
   }
   &__text {
+    font-size: 18px;
     padding: 0 20px;
     opacity: 0;
     transform: translateY(-20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: all 0.5s ease;
   }
 }
+
 .rotate {
   transform: rotate(180deg);
 }
