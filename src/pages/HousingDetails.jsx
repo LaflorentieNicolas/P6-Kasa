@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Carrousel from "../components/Carrousel";
 import getLogements from "../api/getLogements";
 import "../sass/main.scss";
 
 function HousingDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [logementData, setData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -14,13 +15,17 @@ function HousingDetails() {
       try {
         const data = await getLogements();
         const logement = data.find((item) => item.id === id);
-        setData(logement);
+        if (!logement) {
+          navigate("/notfound");
+        } else {
+          setData(logement);
+        }
       } catch (err) {
         setError(err);
       }
     }
     getData();
-  }, [id]);
+  }, [id, navigate]);
 
   if (error) {
     return <span>{error}</span>;
