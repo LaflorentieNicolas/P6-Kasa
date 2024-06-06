@@ -25,7 +25,7 @@ function Carrousel({ pictures, title }) {
         className="carrousel__button carrousel__button--left"
         onClick={goToPrevious}
       >
-        <img src={arrowLeft} alt="flèche gauche" />;
+        <img src={arrowLeft} alt="flèche gauche" />
       </button>
       <div className="carrousel__image-container">
         <img
@@ -33,12 +33,15 @@ function Carrousel({ pictures, title }) {
           src={pictures[currentIndex]}
           alt={`${title} ${currentIndex + 1}`}
         />
+        <div className="carrousel__counter">
+          {currentIndex + 1} / {pictures.length}
+        </div>
       </div>
       <button
         className="carrousel__button carrousel__button--right"
         onClick={goToNext}
       >
-        <img src={arrowRight} alt="flèche droite" />;
+        <img src={arrowRight} alt="flèche droite" />
       </button>
     </div>
   );
