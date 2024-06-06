@@ -6,7 +6,7 @@ function Card({ cover, title, id }) {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate(`/form/${id}`);
+    navigate(`/HousingDetails/${id}`);
   };
 
   return (
