@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Carrousel from "../components/Carrousel";
+import getLogements from "../api/getLogements";
 import "../sass/main.scss";
 
 function HousingDetails() {
@@ -11,8 +12,7 @@ function HousingDetails() {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await fetch("/logements.json");
-        const data = await response.json();
+        const data = await getLogements();
         const logement = data.find((item) => item.id === id);
         setData(logement);
       } catch (err) {
@@ -27,7 +27,7 @@ function HousingDetails() {
   }
 
   if (!logementData) {
-    return <span>Chargement...</span>;
+    return null;
   }
 
   return (
@@ -37,6 +37,7 @@ function HousingDetails() {
         id={logementData.id}
         cover={logementData.cover}
         pictures={logementData.pictures}
+        title={logementData.title}
       />
     </div>
   );

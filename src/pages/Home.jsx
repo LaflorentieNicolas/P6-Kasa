@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
+import getLogements from "../api/getLogements";
 import "../sass/main.scss";
 import imgHomeBanner from "../assets/img/banner-home.webp";
 
@@ -12,10 +13,9 @@ const Home = () => {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await fetch("/logements.json");
-        const data = await response.json();
+        const logements = await getLogements();
 
-        setData(data);
+        setData(logements);
       } catch (err) {
         setError(err);
       }
