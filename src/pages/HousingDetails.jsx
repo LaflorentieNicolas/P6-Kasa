@@ -36,15 +36,17 @@ function HousingDetails() {
   }
 
   return (
-    <div className="carrousel">
-      <Carrousel
-        key={logementData.id}
-        id={logementData.id}
-        cover={logementData.cover}
-        pictures={logementData.pictures}
-        title={logementData.title}
-      />
-    </div>
+    <main>
+      <div className="carrousel">
+        <Carrousel
+          key={logementData.id}
+          id={logementData.id}
+          cover={logementData.cover}
+          pictures={logementData.pictures}
+          title={logementData.title}
+        />
+      </div>
+    </main>
   );
 }
 

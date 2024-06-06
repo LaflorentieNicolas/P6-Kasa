@@ -1,6 +1,6 @@
 .carrousel {
   position: relative;
-  width: calc(100% - 100px);
+  width: 100%;
   margin: auto;
 
   &__image-container {
@@ -15,6 +15,7 @@
     max-height: 415px;
     object-fit: cover;
     border-radius: 25px;
+    justify-content: center;
   }
 
   &__counter {
@@ -33,11 +34,9 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
     border: none;
     background: none;
     color: white;
-    font-size: 2rem;
     cursor: pointer;
     padding: 10px;
     z-index: 10;
