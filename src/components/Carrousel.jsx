@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import arrowLeft from "../assets/img/arrow-left.png";
+import arrowRight from "../assets/img/arrow-right.png";
 import "../sass/main.scss";
 
 function Carrousel({ pictures, title }) {
@@ -23,7 +25,7 @@ function Carrousel({ pictures, title }) {
         className="carrousel__button carrousel__button--left"
         onClick={goToPrevious}
       >
-        &#10094;
+        <img src={arrowLeft} alt="flèche gauche" />;
       </button>
       <div className="carrousel__image-container">
         <img
@@ -36,7 +38,7 @@ function Carrousel({ pictures, title }) {
         className="carrousel__button carrousel__button--right"
         onClick={goToNext}
       >
-        &#10095;
+        <img src={arrowRight} alt="flèche droite" />;
       </button>
     </div>
   );
