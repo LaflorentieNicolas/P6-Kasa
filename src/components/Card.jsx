@@ -1,12 +1,10 @@
-import { useNavigate } from "react-router-dom";
-
 import "../sass/main.scss";
 
-function Card({ cover, title, id }) {
-  const navigate = useNavigate();
-
+function Card({ cover, title, id, onPress }) {
   const handleCardClick = () => {
-    navigate(`/HousingDetails/${id}`);
+    if (onPress) {
+      onPress(id);
+    }
   };
 
   return (
