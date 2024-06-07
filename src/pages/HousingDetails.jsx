@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Carrousel from "../components/Carrousel";
-import getLogements from "../api/getLogements";
+import getLogement from "../api/getLogement";
 import "../sass/main.scss";
 
 function HousingDetails() {
@@ -13,8 +13,7 @@ function HousingDetails() {
   useEffect(() => {
     async function getData() {
       try {
-        const data = await getLogements(id);
-        const logement = data.find((item) => item.id === id);
+        const logement = await getLogement(id);
         if (!logement) {
           navigate("/notfound");
         } else {
