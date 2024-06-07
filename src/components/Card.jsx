@@ -3,7 +3,7 @@ import "../sass/main.scss";
 function Card({ cover, title, id, onPress }) {
   const handleCardClick = () => {
     if (onPress) {
-      onPress(id);
+      onPress();
     }
   };
 
