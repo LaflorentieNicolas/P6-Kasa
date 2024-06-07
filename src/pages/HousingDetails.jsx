@@ -45,6 +45,17 @@ function HousingDetails() {
           title={logementData.title}
         />
       </div>
+      <div className="housing__info">
+        <h1 className="housing__title">{logementData.title}</h1>
+        <h2 className="housing__location">{logementData.location}</h2>
+        <div className="housing__tags">
+          {logementData.tags.map((tag, i) => (
+            <p key={i} className="housing__tags-tag">
+              {tag}
+            </p>
+          ))}
+        </div>
+      </div>
     </main>
   );
 }
