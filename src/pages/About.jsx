@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import Collapse from "../components/Collapse";
-
+import getAboutContent from "../api/getAboutContent.js";
 import "../sass/main.scss";
 import imgAboutBanner from "../assets/img/banner-about.webp";
 
@@ -12,10 +12,9 @@ const About = () => {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await fetch("/about.json");
-        const data = await response.json();
+        const aboutContent = await getAboutContent();
 
-        setData(data);
+        setData(aboutContent);
       } catch (err) {
         setError(err);
       }

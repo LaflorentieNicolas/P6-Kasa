@@ -13,7 +13,7 @@ function HousingDetails() {
   useEffect(() => {
     async function getData() {
       try {
-        const data = await getLogements();
+        const data = await getLogements(id);
         const logement = data.find((item) => item.id === id);
         if (!logement) {
           navigate("/notfound");
