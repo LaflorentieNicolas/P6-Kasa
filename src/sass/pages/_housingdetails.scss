@@ -33,7 +33,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 115px;
+      width: 170px;
       height: 25px;
       color: white;
       background-color: #ff6060;
@@ -45,20 +45,23 @@
   &__host-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+  }
+  &__host-name {
+    text-align: right;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    width: 93px;
+    color: #ff6060;
+    padding-right: 10px;
+  }
 
-    &__host-name {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    &__host-picture {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-    }
+  &__host-picture {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 64px;
+    border: 1px solid #ccc;
   }
 }
