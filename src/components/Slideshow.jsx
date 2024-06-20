@@ -29,17 +29,18 @@ function Carrousel({ pictures, title }) {
           <img src={arrowLeft} alt="flèche gauche" />
         </button>
       )}
-      <div className="carrousel__image-container">
-        <img
-          className="carrousel__image"
-          src={pictures[currentIndex]}
-          alt={`${title} ${currentIndex + 1}`}
-        />
-        {pictures.length > 1 && (
-          <div className="carrousel__counter">
-            {currentIndex + 1} / {pictures.length}
-          </div>
-        )}
+      <div
+        className="carrousel__image-container"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {pictures.map((picture, index) => (
+          <img
+            key={index}
+            className="carrousel__image"
+            src={picture}
+            alt={`${title} ${index + 1}`}
+          />
+        ))}
       </div>
       {pictures.length > 1 && (
         <button
@@ -48,6 +49,11 @@ function Carrousel({ pictures, title }) {
         >
           <img src={arrowRight} alt="flèche droite" />
         </button>
+      )}
+      {pictures.length > 1 && (
+        <div className="carrousel__counter">
+          {currentIndex + 1} / {pictures.length}
+        </div>
       )}
     </div>
   );
