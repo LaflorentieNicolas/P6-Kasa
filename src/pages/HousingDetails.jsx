@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { useParams, useNavigate } from "react-router-dom";
 import Slideshow from "../components/Slideshow";
 import getLogement from "../api/getLogement";
@@ -45,19 +46,42 @@ function HousingDetails() {
           title={logementData.title}
         />
       </div>
-      <div className="housing__info">
-        <h1 className="housing__title">{logementData.title}</h1>
-        <h2 className="housing__location">{logementData.location}</h2>
-        <div className="housing__tags">
-          {logementData.tags.map((tag, i) => (
-            <p key={i} className="housing__tags-tag">
-              {tag}
-            </p>
-          ))}
+      <article className="housing__container">
+        <div className="housing__info">
+          <h1 className="housing__title">{logementData.title}</h1>
+          <h2 className="housing__location">{logementData.location}</h2>
+          <div className="housing__tags">
+            {logementData.tags.map((tag, i) => (
+              <p key={i} className="housing__tags-tag">
+                {tag}
+              </p>
+            ))}
+          </div>
         </div>
-      </div>
+        <div className="housing__host-container">
+          <p className="housing__host-name">{logementData.host.name}</p>
+          <img
+            src={logementData.host.picture}
+            alt="host-cover"
+            className="housing__host-picture"
+          />
+        </div>
+      </article>
     </main>
   );
 }
-
+HousingDetails.propTypes = {
+  logementData: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    cover: PropTypes.string.isRequired,
+    pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
+    title: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    host: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+    }).isRequired,
+  }),
+};
 export default HousingDetails;
