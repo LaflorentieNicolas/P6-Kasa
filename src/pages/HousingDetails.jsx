@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Carrousel from "../components/Carrousel";
+import Slideshow from "../components/Slideshow";
 import getLogement from "../api/getLogement";
 import "../sass/main.scss";
 
@@ -37,7 +37,7 @@ function HousingDetails() {
   return (
     <main>
       <div className="carrousel">
-        <Carrousel
+        <Slideshow
           key={logementData.id}
           id={logementData.id}
           cover={logementData.cover}
