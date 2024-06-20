@@ -21,28 +21,34 @@ function Carrousel({ pictures, title }) {
 
   return (
     <div className="carrousel">
-      <button
-        className="carrousel__button carrousel__button--left"
-        onClick={goToPrevious}
-      >
-        <img src={arrowLeft} alt="flèche gauche" />
-      </button>
+      {pictures.length > 1 && (
+        <button
+          className="carrousel__button carrousel__button--left"
+          onClick={goToPrevious}
+        >
+          <img src={arrowLeft} alt="flèche gauche" />
+        </button>
+      )}
       <div className="carrousel__image-container">
         <img
           className="carrousel__image"
           src={pictures[currentIndex]}
           alt={`${title} ${currentIndex + 1}`}
         />
-        <div className="carrousel__counter">
-          {currentIndex + 1} / {pictures.length}
-        </div>
+        {pictures.length > 1 && (
+          <div className="carrousel__counter">
+            {currentIndex + 1} / {pictures.length}
+          </div>
+        )}
       </div>
-      <button
-        className="carrousel__button carrousel__button--right"
-        onClick={goToNext}
-      >
-        <img src={arrowRight} alt="flèche droite" />
-      </button>
+      {pictures.length > 1 && (
+        <button
+          className="carrousel__button carrousel__button--right"
+          onClick={goToNext}
+        >
+          <img src={arrowRight} alt="flèche droite" />
+        </button>
+      )}
     </div>
   );
 }
