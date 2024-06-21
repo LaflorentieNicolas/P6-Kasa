@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useParams, useNavigate } from "react-router-dom";
 import Slideshow from "../components/Slideshow";
 import getLogement from "../api/getLogement";
+import Rating from "../components/Rating";
 import "../sass/main.scss";
 
 function HousingDetails() {
@@ -59,12 +60,15 @@ function HousingDetails() {
           </div>
         </div>
         <div className="housing__host-container">
-          <p className="housing__host-name">{logementData.host.name}</p>
-          <img
-            src={logementData.host.picture}
-            alt="host-cover"
-            className="housing__host-picture"
-          />
+          <div className="housing__host-info">
+            <p className="housing__host-name">{logementData.host.name}</p>
+            <img
+              src={logementData.host.picture}
+              alt="host-cover"
+              className="housing__host-picture"
+            />
+          </div>
+          <Rating rating={logementData.rating} />
         </div>
       </article>
     </main>
@@ -82,6 +86,7 @@ HousingDetails.propTypes = {
       name: PropTypes.string.isRequired,
       picture: PropTypes.string.isRequired,
     }).isRequired,
+    rating: PropTypes.string.isRequired,
   }),
 };
 export default HousingDetails;

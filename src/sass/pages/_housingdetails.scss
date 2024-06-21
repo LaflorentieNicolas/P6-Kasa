@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 20px 0 20px 0;
+    padding: 20px 0;
   }
 
   &__info {
@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
   }
+
   &__title {
     font-size: 36px;
     font-weight: 500;
@@ -26,7 +27,6 @@
 
   &__tags {
     display: flex;
-
     gap: 10px;
 
     &-tag {
@@ -44,9 +44,15 @@
 
   &__host-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__host-info {
+    display: flex;
     align-items: center;
   }
+
   &__host-name {
     text-align: right;
     font-size: 18px;
@@ -63,5 +69,15 @@
     object-fit: cover;
     border-radius: 64px;
     border: 1px solid #ccc;
+  }
+}
+.rating {
+  display: flex;
+  margin-top: 15px;
+
+  img {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
   }
 }
