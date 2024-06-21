@@ -34,7 +34,7 @@ const About = () => {
             key={about.id}
             id={about.id}
             title={about.title}
-            description={about.description}
+            description={<p className="collapse__text">{about.description}</p>}
           />
         ))}
       </div>

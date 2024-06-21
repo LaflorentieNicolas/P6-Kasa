@@ -42,6 +42,10 @@
     }
   }
 
+  &__collapse {
+    display: flex;
+    align-items: center;
+  }
   &__host-container {
     display: flex;
     flex-direction: column;

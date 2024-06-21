@@ -1,31 +1,34 @@
-import { useEffect, useState } from "react";
+// HousingDetails.jsx
+
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useParams, useNavigate } from "react-router-dom";
 import Slideshow from "../components/Slideshow";
 import getLogement from "../api/getLogement";
 import Rating from "../components/Rating";
+import Collapse from "../components/Collapse";
 import "../sass/main.scss";
 
 function HousingDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [logementData, setData] = useState(null);
+  const [logementData, setLogementData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function getData() {
+    async function fetchLogementData() {
       try {
         const logement = await getLogement(id);
         if (!logement) {
           navigate("/notfound");
         } else {
-          setData(logement);
+          setLogementData(logement);
         }
       } catch (err) {
         setError(err);
       }
     }
-    getData();
+    fetchLogementData();
   }, [id, navigate]);
 
   if (error) {
@@ -71,9 +74,30 @@ function HousingDetails() {
           <Rating rating={logementData.rating} />
         </div>
       </article>
+      <div className="about-container">
+        <Collapse
+          id={`${logementData.id}-description`}
+          title="Description"
+          description={
+            <p className="collapse__text">{logementData.description}</p>
+          }
+        />
+        <Collapse
+          id={`${logementData.id}-equipments`}
+          title="Equipments"
+          description={
+            <ul>
+              {logementData.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          }
+        />
+      </div>
     </main>
   );
 }
+
 HousingDetails.propTypes = {
   logementData: PropTypes.shape({
     id: PropTypes.string.isRequired,
@@ -87,6 +111,9 @@ HousingDetails.propTypes = {
       picture: PropTypes.string.isRequired,
     }).isRequired,
     rating: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    equipments: PropTypes.arrayOf(PropTypes.string).isRequired,
   }),
 };
+
 export default HousingDetails;

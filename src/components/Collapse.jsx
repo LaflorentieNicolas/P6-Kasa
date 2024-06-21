@@ -4,12 +4,14 @@ import "../sass/main.scss";
 
 function Collapse({ title, description }) {
   const [isOpen, setIsOpen] = useState(false);
-  const display = () => {
+
+  const toggleCollapse = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div className="collapse_container">
-      <div className="collapse" onClick={display}>
+      <div className="collapse" onClick={toggleCollapse}>
         <h2 className="collapse__title">{title}</h2>
         <button>
           <img
@@ -20,7 +22,7 @@ function Collapse({ title, description }) {
         </button>
       </div>
       <div className={`collapse__description ${isOpen ? "show" : ""}`}>
-        <p className="collapse__text">{description}</p>
+        {description}
       </div>
     </div>
   );
