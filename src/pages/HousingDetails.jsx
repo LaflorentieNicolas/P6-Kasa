@@ -74,7 +74,7 @@ function HousingDetails() {
           <Rating rating={logementData.rating} />
         </div>
       </article>
-      <div className="about-container">
+      <div className="housing__collapse">
         <Collapse
           id={`${logementData.id}-description`}
           title="Description"
@@ -88,7 +88,9 @@ function HousingDetails() {
           description={
             <ul>
               {logementData.equipments.map((equipment, index) => (
-                <li key={index}>{equipment}</li>
+                <li key={index} className="collapse__text">
+                  {equipment}
+                </li>
               ))}
             </ul>
           }

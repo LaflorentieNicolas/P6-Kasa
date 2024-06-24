@@ -1,10 +1,10 @@
 @import "./layout/header";
 @import "./layout/footer";
-@import "./layout/banner";
 @import "./base/normalize";
 @import "./base/grid";
 @import "./utils/mixins";
 @import "./utils/variables";
+@import "./components/banner";
 @import "./components/card-container";
 @import "./components/card";
 @import "./components/collapse";

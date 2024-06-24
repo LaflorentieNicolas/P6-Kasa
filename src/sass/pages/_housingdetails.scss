@@ -42,10 +42,6 @@
     }
   }
 
-  &__collapse {
-    display: flex;
-    align-items: center;
-  }
   &__host-container {
     display: flex;
     flex-direction: column;
@@ -73,6 +69,12 @@
     object-fit: cover;
     border-radius: 64px;
     border: 1px solid #ccc;
+  }
+
+  &__collapse {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 76px;
   }
 }
 .rating {
