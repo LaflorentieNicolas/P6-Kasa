@@ -77,14 +77,16 @@ function HousingDetails() {
       <div className="housing__collapse">
         <Collapse
           id={`${logementData.id}-description`}
-          title="Description"
+          title={
+            <h2 className="collapse__title-housingdetails">Description</h2>
+          }
           description={
             <p className="collapse__text">{logementData.description}</p>
           }
         />
         <Collapse
           id={`${logementData.id}-equipments`}
-          title="Equipments"
+          title={<h2 className="collapse__title-housingdetails">Equipement</h2>}
           description={
             <ul>
               {logementData.equipments.map((equipment, index) => (

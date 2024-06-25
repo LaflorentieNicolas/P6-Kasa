@@ -33,7 +33,7 @@ const About = () => {
           <Collapse
             key={about.id}
             id={about.id}
-            title={about.title}
+            title={<h2 className="collapse__title-about">{about.title}</h2>}
             description={<p className="collapse__text">{about.description}</p>}
           />
         ))}

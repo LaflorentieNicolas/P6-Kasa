@@ -12,7 +12,7 @@ function Collapse({ title, description }) {
   return (
     <div className="collapse_container">
       <div className="collapse" onClick={toggleCollapse}>
-        <h2 className="collapse__title">{title}</h2>
+        <div className="collapse__title">{title}</div>
         <button>
           <img
             className={`collapse__arrow ${isOpen ? "rotate" : ""}`}
