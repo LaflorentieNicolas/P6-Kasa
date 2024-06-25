@@ -1,3 +1,5 @@
+@import "../utils/variables";
+
 .housing {
   &__container {
     display: flex;
@@ -16,7 +18,7 @@
     font-size: 36px;
     font-weight: 500;
     margin: 0;
-    color: #ff6060;
+    color: $light-red;
   }
 
   &__location {
@@ -35,8 +37,8 @@
       justify-content: center;
       width: 170px;
       height: 25px;
-      color: white;
-      background-color: #ff6060;
+      color: $white;
+      background-color: $light-red;
       border-radius: 10px;
       font-size: 14px;
     }

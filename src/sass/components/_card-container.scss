@@ -9,7 +9,7 @@
   padding: 40px;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    background-color: white;
+    background-color: $white;
     padding: 0px;
   }
 }
