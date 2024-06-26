@@ -17,6 +17,8 @@
     color: $white;
     @media (max-width: 768px) {
       font-size: 12px;
+      width: 110px;
+      text-align: center;
     }
   }
 }
