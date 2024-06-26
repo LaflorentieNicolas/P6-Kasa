@@ -1,3 +1,4 @@
+@import "../utils/mixins";
 @import "../utils/variables";
 
 .collapse {
@@ -7,45 +8,42 @@
   background-color: $light-red;
   flex-grow: 1;
   height: 54px;
-  padding: 0 20px 0 15px;
+  @include spacing(padding, 0 20px 0 15px);
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.5s ease;
-  @media (max-width: 768px) {
+
+  @include respond-to(small) {
     height: 30px;
   }
-  &__title-about {
-    color: $white;
-    font-weight: 700;
-    font-size: 24px;
-    @media (max-width: 768px) {
-      font-size: 13px;
-    }
-  }
+
+  &__title-about,
   &__title-housingdetails {
-    color: $white;
-    font-weight: 700;
-    font-size: 18px;
-    @media (max-width: 768px) {
+    @include font(24px, $white, 700);
+
+    @include respond-to(small) {
       font-size: 13px;
     }
   }
 
   &__arrow {
     transition: transform 0.3s ease;
-    @media (max-width: 768px) {
+
+    @include respond-to(small) {
       width: 16px;
       height: 16px;
     }
   }
+
   &__text {
     font-size: 18px;
-    padding: 0 20px;
+    @include spacing(padding, 0 20px);
     opacity: 0;
     transform: translateY(-20px);
     transition: all 0.5s ease;
     list-style-type: none;
-    @media (max-width: 768px) {
+
+    @include respond-to(small) {
       font-size: 12px;
     }
   }

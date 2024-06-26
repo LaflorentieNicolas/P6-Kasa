@@ -11,3 +11,35 @@
   box-shadow: 0px 4px 4px 0px #00000040;
   filter: brightness(40%);
 }
+
+@mixin spacing($property, $values...) {
+  @each $value in $values {
+    #{$property}: #{$value};
+  }
+}
+
+@mixin font($size, $color: null, $weight: null) {
+  font-size: $size;
+  @if $color {
+    color: $color;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}

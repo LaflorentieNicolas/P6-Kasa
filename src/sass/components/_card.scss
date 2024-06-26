@@ -1,3 +1,6 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
 .card {
   position: relative;
   aspect-ratio: 1/1;
@@ -11,14 +14,13 @@
     border-radius: 10px;
     object-fit: cover;
   }
+
   &__title {
-    font-weight: 700;
-    font-size: 18px;
-    color: #ffffff;
+    @include font(18px, $white, 700);
     z-index: 1;
     position: absolute;
     bottom: 0;
     left: 0;
-    margin: 10px;
+    @include spacing(margin, 10px);
   }
 }

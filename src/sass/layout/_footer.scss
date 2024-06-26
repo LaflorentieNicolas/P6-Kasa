@@ -1,3 +1,4 @@
+@import "../utils/mixins";
 @import "../utils/variables";
 
 .footer {
@@ -7,15 +8,17 @@
   flex-direction: column;
   background-color: $black;
   height: 209px;
-  padding: 0;
+  @include spacing(padding, 0);
   margin-top: 50px;
-  @media (max-width: 768px) {
+
+  @include respond-to(small) {
     margin-top: 0px;
   }
+
   &__title {
-    font-size: 24px;
-    color: $white;
-    @media (max-width: 768px) {
+    @include font(24px, $white);
+
+    @include respond-to(small) {
       font-size: 12px;
       width: 110px;
       text-align: center;
