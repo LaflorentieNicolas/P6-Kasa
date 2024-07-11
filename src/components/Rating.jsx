@@ -1,6 +1,7 @@
 import React from "react";
 import fullStar from "../assets/img/full-star.svg";
 import emptyStar from "../assets/img/empty-star.svg";
+import PropTypes from "prop-types";
 
 const Star = ({ isFilled }) => {
   return (
@@ -11,9 +12,13 @@ const Star = ({ isFilled }) => {
   );
 };
 
+Star.propTypes = {
+  isFilled: PropTypes.bool.isRequired,
+};
+
 const Rating = ({ rating }) => {
   const totalStars = 5;
-  const filledStars = parseInt(rating);
+  const filledStars = parseInt(rating, 10);
 
   return (
     <div className="rating">
@@ -22,6 +27,10 @@ const Rating = ({ rating }) => {
       ))}
     </div>
   );
+};
+
+Rating.propTypes = {
+  rating: PropTypes.number.isRequired,
 };
 
 export default Rating;

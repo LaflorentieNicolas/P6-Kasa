@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "../sass/main.scss";
 
 function Banner({ img, className }) {
@@ -7,5 +8,10 @@ function Banner({ img, className }) {
     </div>
   );
 }
+
+Banner.propTypes = {
+  img: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
 
 export default Banner;

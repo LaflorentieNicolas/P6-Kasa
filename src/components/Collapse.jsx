@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import arrow from "../assets/img/arrow-up-down.svg";
 import "../sass/main.scss";
 
@@ -27,5 +28,10 @@ function Collapse({ title, description }) {
     </div>
   );
 }
+
+Collapse.propTypes = {
+  title: PropTypes.node.isRequired,
+  description: PropTypes.node.isRequired,
+};
 
 export default Collapse;
