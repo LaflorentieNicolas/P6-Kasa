@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import arrowLeft from "../assets/img/arrow-left.png";
-import arrowRight from "../assets/img/arrow-right.png";
+import arrowLeft from "../assets/img/arrow-left.svg";
+import arrowRight from "../assets/img/arrow-right.svg";
 import "../sass/main.scss";
 
 function Carrousel({ pictures, title }) {
