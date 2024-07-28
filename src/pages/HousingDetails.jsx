@@ -30,7 +30,7 @@ function HousingDetails() {
   }, [id, navigate]);
 
   if (error) {
-    return <span>{error}</span>;
+    return <span>{error.message}</span>;
   }
 
   if (!logementData) {
@@ -69,7 +69,7 @@ function HousingDetails() {
               className="housing__host-picture"
             />
           </div>
-          <Rating rating={logementData.rating} />
+          <Rating rating={parseFloat(logementData.rating)} />
         </div>
       </article>
       <div className="housing__collapse">
@@ -112,7 +112,7 @@ HousingDetails.propTypes = {
       name: PropTypes.string.isRequired,
       picture: PropTypes.string.isRequired,
     }).isRequired,
-    rating: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
     equipments: PropTypes.arrayOf(PropTypes.string).isRequired,
   }),

@@ -5,7 +5,6 @@ import Card from "../components/Card";
 import getLogements from "../api/getLogements";
 import "../sass/main.scss";
 import imgHomeBanner from "../assets/img/banner-home.webp";
-import PropTypes from "prop-types";
 
 const Home = () => {
   const [logementData, setData] = useState([]);
@@ -29,7 +28,7 @@ const Home = () => {
         <h1>{"Chez vous, partout et ailleurs"}</h1>
         <Banner img={imgHomeBanner} />
       </div>
-      {error && <span>{error.message}</span>}{" "}
+      {error && <span>{error.message}</span>}
       <div className="card-container">
         {logementData.map((logement) => (
           <Link to={`/HousingDetails/${logement.id}`} key={logement.id}>
@@ -46,16 +45,4 @@ const Home = () => {
   );
 };
 
-Home.propTypes = {
-  logementData: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      cover: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  error: PropTypes.instanceOf(Error),
-};
-
 export default Home;
-
