@@ -7,7 +7,7 @@ const Star = ({ isFilled }) => {
   return (
     <img
       src={isFilled ? fullStar : emptyStar}
-      alt={isFilled ? "Full star" : "Empty star"}
+      alt={isFilled ? "Étoile pleine" : "Étoile vide"}
     />
   );
 };
