@@ -16,13 +16,14 @@ Star.propTypes = {
   isFilled: PropTypes.bool.isRequired,
 };
 
+const totalStars = 5;
+
 const Rating = ({ rating }) => {
-  const totalStars = 5;
-  const filledStars = parseInt(rating, 10);
+  const filledStars = rating;
 
   return (
     <div className="rating">
-      {[...Array(totalStars)].map((star, index) => (
+      {[...Array(totalStars)].map((_, index) => (
         <Star key={index} isFilled={index < filledStars} />
       ))}
     </div>
