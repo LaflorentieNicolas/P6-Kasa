@@ -14,7 +14,7 @@ Le site de Kasa a été codé il y a maintenant plus de 10 ans en ASP.NET avec u
 
 ## Ressources
 - **Fichier JSON des 20 dernières annonces de logements** : [JSON](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json)  
-- **Outils et contraintes techniques** : [Doc - Contraintes techniques](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/IW_P8+React+Kasa/Kasa+coding+guidelines+-+IW+-+DW.pdf)  
+- **Outils et contraintes techniques** : [Doc - Contraintes techniques](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://course.oc-static.com/projects/D%C3%A9veloppeur+Web/IW_P8+React+Kasa/Kasa+coding+guidelines+-+IW+-+DW.pdf) 
 - **Figma** : [Maquettes](https://www.figma.com/design/2BZEoBhyxt5IwZgRn0wGsL/Kasa_FR?node-id=0-1&p=f)
 - **Figma** : [Prototypes du site](https://www.figma.com/proto/2BZEoBhyxt5IwZgRn0wGsL/Kasa_FR?type=design&node-id=3-0&t=x8RBKuR4UiE3hhBW-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=3%3A0&show-proto-sidebar=1)
 
