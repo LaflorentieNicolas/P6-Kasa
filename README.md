@@ -68,7 +68,6 @@ Le site de Kasa a été codé il y a maintenant plus de 10 ans en ASP.NET avec u
    - Affichage d'un message d'erreur en cas de route inconnue.  
    - Lien pour retourner à la page d'accueil.  
 
----
 
 ### 3. Améliorations et finitions
 
